@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+	/* background-image: url("./watch2.jpg");
+	background-repeat: no-repeat;
+	background-position: left top; */
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+}
+
+ul {
+	width: 15%;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	margin-left: 10%;
+}
+
+ul:hover {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.home {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("./watch2.jpg");
+	background-repeat: no-repeat;
+	background-position: left top;
+	z-index: -1;
+}
+
+.nav-home {
+	background-color: transparent;
+}
+
+.nav-shop {
+	background-color: black;
+}
