@@ -1,3 +1,22 @@
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
 body {
 	margin: 0;
 	/* background-image: url("./watch2.jpg");
@@ -9,7 +28,7 @@ nav {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	color: white;
+	color: rgb(255, 228, 72);
 }
 
 ul {
@@ -26,7 +45,7 @@ ul:hover {
 
 a {
 	text-decoration: none;
-	color: white;
+	color: rgb(255, 228, 72);
 }
 
 .home {
@@ -35,7 +54,7 @@ a {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-image: url("./watch2.jpg");
+	background-image: url("./watch.jpg");
 	background-repeat: no-repeat;
 	background-position: left top;
 	z-index: -1;
@@ -47,4 +66,46 @@ a {
 
 .nav-shop {
 	background-color: black;
+}
+
+.product-container {
+	width: 20vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5%;
+}
+
+.product-img {
+	width: 20vw;
+}
+
+.counter-container {
+	display: flex;
+}
+
+.counter-item {
+	padding: 10%;
+	margin: 1%;
+	outline: 1px solid gold;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.input-num {
+	width: 2vw;
+	outline: 1px solid gold;
+}
+
+.shop {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
 }

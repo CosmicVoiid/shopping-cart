@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 
-function Navbar() {
-	const [isOnShop, setIsOnShop] = useState(false);
-	const [isOnHome, setIsOnHome] = useState(true);
+function Navbar(props) {
+	const [isOnShop, setIsOnShop] = useState();
+	const [isOnHome, setIsOnHome] = useState();
 	const [navClass, setNavClass] = useState("nav-home");
 
 	const handleShopChange = () => {
@@ -27,6 +27,14 @@ function Navbar() {
 		}
 	}, [isOnShop, isOnHome]);
 
+	useEffect(() => {
+		if (window.location.href === "http://localhost:3000/shop") {
+			setNavClass("nav-shop");
+		} else if (window.location.href === "http://localhost:3000") {
+			setNavClass("nav-home");
+		}
+	}, []);
+
 	return (
 		<nav className={navClass}>
 			<h3>The Watch Tower</h3>
@@ -39,7 +47,7 @@ function Navbar() {
 					<li onClick={handleShopChange}>Shop</li>
 				</Link>
 
-				<li>Cart</li>
+				<li>Cart {props.cartItems === 0 ? "" : props.cartItems}</li>
 			</ul>
 		</nav>
 	);
