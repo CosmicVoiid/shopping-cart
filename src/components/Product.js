@@ -7,7 +7,7 @@ function Product(props) {
 		img: props.images,
 		description: props.description,
 		price: props.price,
-		amount: 1,
+		amount: 0,
 	});
 
 	const decrementAmount = () => {
@@ -19,15 +19,15 @@ function Product(props) {
 	};
 
 	const typeAmount = (event) => {
-		if (event.target.value >= 1) setAmount(Number(event.target.value));
+		if (event.target.value > 0) setAmount(Number(event.target.value));
 	};
 
 	const handleCartCallback = () => {
-		console.log(data);
 		props.cartCallback(data);
 	};
 
 	useEffect(() => {
+		console.log("testting");
 		setData({
 			...data,
 			amount: amount,

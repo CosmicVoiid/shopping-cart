@@ -6,16 +6,20 @@ import Shop from "./components/Shop";
 
 const Routes = () => {
 	const [totalItems, setTotalItems] = useState(0);
-	const [totalCartItems, setTotalCartItems] = useState([]);
+	const [totalCartItems, setTotalCartItems] = useState();
 
 	const totalCartCallback = (childData) => {
-		let amountArray = childData.map((data) => data.amount);
-		let cartTotalItems = amountArray.reduce(
-			(total, amount) => total + amount,
-			0
-		);
-		console.log(`Total Items: ${totalItems}`);
-		setTotalItems(cartTotalItems);
+		if (childData.length !== 0) {
+			console.log({ childData });
+			console.log("ran");
+			let amountArray = childData.map((data) => data.amount);
+			let cartTotalItems = amountArray.reduce(
+				(total, amount) => total + amount,
+				0
+			);
+			// console.log(`Total Items: ${totalItems}`);
+			setTotalItems(cartTotalItems);
+		}
 	};
 
 	// const totalCartCallback = (childData) => {
@@ -32,25 +36,25 @@ const Routes = () => {
 	// 	setTotalCartItems(totalCartItems.concat(childData));
 	// };
 
-	// useEffect(() => {
-	// 	console.log(totalCartItems);
-	// }, [totalCartItems]);
+	useEffect(() => {
+		console.log(`Total Items: ${totalItems}`);
+	}, [totalItems]);
 
 	return (
 		<BrowserRouter>
 			<Navbar cartItems={totalItems} />
 			<Switch>
-				<Route exact path="/" component={App} />
+				<Route exact path="S/" component={App} />
 				<Route
 					exact
 					path="/shop"
-					component={(props) => (
-						<Shop parentCallback={totalCartCallback} {...props} />
+					render={(props) => (
+						<Shop {...props} parentCallback={totalCartCallback} />
 					)}
 				/>
 			</Switch>
 		</BrowserRouter>
 	);
 };
-
+//parentCallback={totalCartCallback} {...props}
 export default Routes;

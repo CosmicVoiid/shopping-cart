@@ -19,12 +19,13 @@ function Shop(props) {
 	useEffect(() => {
 		props.parentCallback(cartItems);
 		console.log(cartItems);
-	}, [cartItems, props]);
+	}, [cartItems]);
 
 	const handleCartCallback = (childData) => {
 		const findObject = cartItems.findIndex(
 			(obj) => obj.description === childData.description
 		);
+		console.log(findObject);
 
 		if (findObject !== -1) {
 			const arrayCopy = [...cartItems];
@@ -36,10 +37,6 @@ function Shop(props) {
 			setCartItems(cartItems.concat(childData));
 		}
 	};
-
-	// useEffect(() => {
-	// 	console.log(cartItems);
-	// }, [cartItems]);
 
 	return (
 		<div>
