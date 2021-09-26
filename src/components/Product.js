@@ -37,6 +37,12 @@ function Product(props) {
 		});
 	}, [amount]);
 
+	useEffect(() => {
+		if (props.cartPage === true) {
+			props.amountChange(data);
+		}
+	}, [data]);
+
 	return (
 		<div className="product-container">
 			<img className="product-img" src={props.images} alt={props.description} />

@@ -23,8 +23,22 @@ function Cart(props) {
 			let subTotals = inCart.map((info) => info.amount * info.price);
 			let total = subTotals.reduce((a, b) => a + b);
 			setTotalPrice(total);
-		}
+		} else setTotalPrice(0);
 	}, [inCart]);
+
+	const handleAmountChange = (childData) => {
+		const findObject = inCart.findIndex(
+			(obj) => obj.description === childData.description
+		);
+
+		if (findObject !== -1) {
+			const arrayCopy = [...inCart];
+			let objCopy = { ...arrayCopy[findObject] };
+			objCopy.amount = childData.amount;
+			arrayCopy[findObject] = objCopy;
+			setInCart(arrayCopy);
+		}
+	};
 
 	return (
 		<div>
@@ -38,6 +52,7 @@ function Cart(props) {
 					cartPage={true}
 					deleteCallback={handleDelete}
 					oldAmount={info.amount}
+					amountChange={handleAmountChange}
 				/>
 			))}
 			<h2>Total: ${totalPrice}</h2>
