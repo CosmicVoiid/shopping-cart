@@ -41,7 +41,7 @@ const Routes = () => {
 					path="/cart"
 					render={(props) => <Cart {...props} cart={totalCartItems} />}
 				/>
-				<Route path="/" component={App} />
+				<Route path="" component={App} />
 			</Switch>
 		</BrowserRouter>
 	);
