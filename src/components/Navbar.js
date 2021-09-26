@@ -28,11 +28,17 @@ function Navbar(props) {
 	}, [isOnShop, isOnHome]);
 
 	useEffect(() => {
-		if (window.location.href === "http://localhost:3000/shop") {
+		if (
+			window.location.href === "http://cosmicvoiid.github.io/shopping-cart/shop"
+		) {
 			setNavClass("nav-shop");
-		} else if (window.location.href === "http://localhost:3000") {
+		} else if (
+			window.location.href === "http://cosmicvoiid.github.io/shopping-cart"
+		) {
 			setNavClass("nav-home");
-		} else if (window.location.href === "http://localhost:3000/cart") {
+		} else if (
+			window.location.href === "http://cosmicvoiid.github.io/shopping-cart/cart"
+		) {
 			setNavClass("nav-cart");
 		}
 	}, []);
