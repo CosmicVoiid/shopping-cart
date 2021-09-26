@@ -29,7 +29,6 @@ const Routes = () => {
 		<BrowserRouter>
 			<Navbar cartItems={totalItems} />
 			<Switch>
-				<Route exact path="/" component={App} />
 				<Route
 					exact
 					path="/shop"
@@ -42,6 +41,7 @@ const Routes = () => {
 					path="/cart"
 					render={(props) => <Cart {...props} cart={totalCartItems} />}
 				/>
+				<Route path="/" component={App} />
 			</Switch>
 		</BrowserRouter>
 	);
