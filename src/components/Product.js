@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function Product(props) {
-	const [amount, setAmount] = useState(1);
+	const [amount, setAmount] = useState(props.oldAmount);
 	const [data, setData] = useState({
 		img: props.images,
 		description: props.description,
 		price: props.price,
-		amount: 0,
+		amount: props.oldAmount,
 	});
 
 	const decrementAmount = () => {
@@ -26,8 +26,11 @@ function Product(props) {
 		props.cartCallback(data);
 	};
 
+	const handleDelete = () => {
+		props.deleteCallback(data);
+	};
+
 	useEffect(() => {
-		console.log("testting");
 		setData({
 			...data,
 			amount: amount,
@@ -53,9 +56,16 @@ function Product(props) {
 					+
 				</div>
 			</div>
-			<button type="button" onClick={handleCartCallback}>
-				Add to Cart
-			</button>
+			{props.cartPage === false && (
+				<button type="button" onClick={handleCartCallback}>
+					Add to Cart
+				</button>
+			)}
+			{props.cartPage === true && (
+				<button type="button" onClick={handleDelete}>
+					delete
+				</button>
+			)}
 		</div>
 	);
 }

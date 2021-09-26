@@ -49,6 +49,8 @@ function Shop(props) {
 						description={info.description}
 						price={info.price}
 						cartCallback={handleCartCallback}
+						cartPage={false}
+						oldAmount={1}
 					/>
 				))}
 			</div>

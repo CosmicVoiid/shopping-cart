@@ -32,6 +32,8 @@ function Navbar(props) {
 			setNavClass("nav-shop");
 		} else if (window.location.href === "http://localhost:3000") {
 			setNavClass("nav-home");
+		} else if (window.location.href === "http://localhost:3000/cart") {
+			setNavClass("nav-cart");
 		}
 	}, []);
 
@@ -47,7 +49,9 @@ function Navbar(props) {
 					<li onClick={handleShopChange}>Shop</li>
 				</Link>
 
-				<li>Cart {props.cartItems === 0 ? "" : props.cartItems}</li>
+				<Link to="/cart">
+					<li>Cart {props.cartItems === 0 ? "" : props.cartItems}</li>
+				</Link>
 			</ul>
 		</nav>
 	);

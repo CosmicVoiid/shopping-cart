@@ -68,6 +68,10 @@ a {
 	background-color: black;
 }
 
+.nav-cart {
+	background-color: black;
+}
+
 .product-container {
 	width: 20vw;
 	display: flex;
