@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.70ac8c83.css",
-    "main.js": "/shopping-cart/static/js/main.1532936b.js",
+    "main.css": "/shopping-cart/static/css/main.0ce0e066.css",
+    "main.js": "/shopping-cart/static/js/main.2644b850.js",
     "static/media/rolex.jpeg": "/shopping-cart/static/media/rolex.8f0b0735bdf9210a91d5.jpeg",
     "static/media/patek.jpg": "/shopping-cart/static/media/patek.124043e9387acf4cf985.jpg",
     "static/media/watch.jpg": "/shopping-cart/static/media/watch.dba51e4951b218a2a4c6.jpg",
@@ -9,11 +9,11 @@
     "static/media/lige-watch.jpeg": "/shopping-cart/static/media/lige-watch.8ed7602052c79c61385b.jpeg",
     "static/media/seiko.jpeg": "/shopping-cart/static/media/seiko.37c2af4661958d031fc4.jpeg",
     "index.html": "/shopping-cart/index.html",
-    "main.70ac8c83.css.map": "/shopping-cart/static/css/main.70ac8c83.css.map",
-    "main.1532936b.js.map": "/shopping-cart/static/js/main.1532936b.js.map"
+    "main.0ce0e066.css.map": "/shopping-cart/static/css/main.0ce0e066.css.map",
+    "main.2644b850.js.map": "/shopping-cart/static/js/main.2644b850.js.map"
   },
   "entrypoints": [
-    "static/css/main.70ac8c83.css",
-    "static/js/main.1532936b.js"
+    "static/css/main.0ce0e066.css",
+    "static/js/main.2644b850.js"
   ]
 }
