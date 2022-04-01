@@ -3,15 +3,15 @@ import Product from "./Product.js";
 import lige from "./products/lige-watch.jpeg";
 import rolex from "./products/rolex.jpeg";
 import omega from "./products/omega.jpeg";
-import patek from "./products/patek.jpeg";
+import patek from "./products/patek.jpg";
 import seiko from "./products/seiko.jpeg";
 
 function Shop(props) {
 	const [imgArray] = useState([
-		{ src: lige, description: "Lige", price: 10 },
-		{ src: rolex, description: "Rolex", price: 20 },
-		{ src: omega, description: "Omega", price: 30 },
-		{ src: patek, description: "Patek", price: 40 },
+		{ src: lige, description: "Lige", price: 125 },
+		{ src: rolex, description: "Rolex", price: 545 },
+		{ src: omega, description: "Omega", price: 75 },
+		{ src: patek, description: "Patek", price: 275 },
 		{ src: seiko, description: "Seiko", price: 50 },
 	]);
 	const [cartItems, setCartItems] = useState([]);
@@ -20,6 +20,10 @@ function Shop(props) {
 		props.parentCallback(cartItems);
 		console.log(cartItems);
 	}, [cartItems]);
+
+	useEffect(() => {
+		setCartItems(props.cart);
+	}, []);
 
 	const handleCartCallback = (childData) => {
 		const findObject = cartItems.findIndex(

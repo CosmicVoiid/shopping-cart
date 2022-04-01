@@ -46,10 +46,10 @@ function Product(props) {
 	return (
 		<div className="product-container">
 			<img className="product-img" src={props.images} alt={props.description} />
-			<p>{props.description}</p>
-			<p>${props.price}</p>
+			<p className="product-name">{props.description}</p>
+			<p className="product-price">${props.price}</p>
 			<div className="counter-container">
-				<div className="counter-item btn" onClick={decrementAmount}>
+				<div className="counter-item minus btn" onClick={decrementAmount}>
 					-
 				</div>
 				<input
@@ -58,18 +58,26 @@ function Product(props) {
 					value={amount}
 					onChange={typeAmount}
 				/>
-				<div className="counter-item btn" onClick={incrementAmount}>
+				<div className="counter-item add btn" onClick={incrementAmount}>
 					+
 				</div>
 			</div>
 			{props.cartPage === false && (
-				<button type="button" onClick={handleCartCallback}>
+				<button
+					className="add-to-cart"
+					type="button"
+					onClick={handleCartCallback}
+				>
 					Add to Cart
 				</button>
 			)}
 			{props.cartPage === true && (
-				<button type="button" onClick={handleDelete}>
-					delete
+				<button
+					className="delete-from-cart"
+					type="button"
+					onClick={handleDelete}
+				>
+					Remove
 				</button>
 			)}
 		</div>

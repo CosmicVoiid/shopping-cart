@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "./Product";
+import { Link } from "react-router-dom";
 
 function Cart(props) {
 	const [inCart, setInCart] = useState([]);
@@ -10,12 +11,14 @@ function Cart(props) {
 		console.log(inCart);
 	}, [props]);
 
-	const handleDelete = (childData) => {
+	const handleDelete = async (childData) => {
+		console.log(childData);
 		let arrayCopy = inCart.filter(
 			(info) => info.description !== childData.description
 		);
 		setInCart(arrayCopy);
-		console.log("switchero");
+		console.log(arrayCopy);
+		props.parentCallback(arrayCopy);
 	};
 
 	useEffect(() => {
@@ -37,12 +40,13 @@ function Cart(props) {
 			objCopy.amount = childData.amount;
 			arrayCopy[findObject] = objCopy;
 			setInCart(arrayCopy);
+			props.parentCallback(arrayCopy);
 		}
 	};
 
 	return (
-		<div>
-			<h2>Cart</h2>
+		<div className="cart-container">
+			<h2 className="cart-header">Cart</h2>
 			{inCart.map((info) => (
 				<Product
 					key={info.description}
@@ -55,7 +59,17 @@ function Cart(props) {
 					amountChange={handleAmountChange}
 				/>
 			))}
-			<h2>Total: ${totalPrice}</h2>
+			{inCart.length !== 0 && (
+				<h2 className="cart-total">Total: ${totalPrice}</h2>
+			)}
+			{inCart.length === 0 && (
+				<div className="empty-cart-container">
+					<h2>Your cart is empty!</h2>
+					<Link to="/shop">
+						<button className="empty-cart-btn">Browse Shop</button>
+					</Link>
+				</div>
+			)}
 		</div>
 	);
 }

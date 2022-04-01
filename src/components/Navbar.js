@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 
 function Navbar(props) {
@@ -41,18 +42,31 @@ function Navbar(props) {
 
 	return (
 		<nav className={navClass}>
-			<h3>The Watch Tower</h3>
+			<h3 className="watch-tower-header">The Watch Tower</h3>
 			<ul>
 				<Link to="/">
-					<li onClick={handleHomeChange}>Home</li>
+					<li className="nav-li nav-li-home" onClick={handleHomeChange}>
+						Home
+					</li>
 				</Link>
 
 				<Link to="/shop">
-					<li onClick={handleShopChange}>Shop</li>
+					<li className="nav-li nav-li-shop" onClick={handleShopChange}>
+						Shop
+					</li>
 				</Link>
 
-				<Link to="/cart">
-					<li>Cart {props.cartItems === 0 ? "" : props.cartItems}</li>
+				<Link to="/cart" className="cart-nav-container">
+					<li className="nav-li nav-li-cart">Cart</li>
+					<div className="icon-container">
+						<FontAwesomeIcon
+							className="cart-icon"
+							icon="fa-solid fa-cart-shopping"
+						/>
+						<p className="cart-number">
+							{props.cartItems === 0 ? "" : props.cartItems}
+						</p>
+					</div>
 				</Link>
 			</ul>
 		</nav>

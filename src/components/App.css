@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+}
+
 input,
 textarea,
 button,
@@ -19,33 +25,55 @@ input[type="number"] {
 
 body {
 	margin: 0;
-	/* background-image: url("./watch2.jpg");
-	background-repeat: no-repeat;
-	background-position: left top; */
 }
 
 nav {
+	position: sticky;
+	top: 0;
+	left: 0;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	color: rgb(255, 228, 72);
+	color: #c6b45e;
+	z-index: 1;
+	min-height: 4.5rem;
+	width: 100vw;
+}
+
+.watch-tower-header {
+	border-bottom: 3px solid transparent;
+	margin: 0;
+	min-width: 12rem;
 }
 
 ul {
-	width: 15%;
 	list-style: none;
 	display: flex;
 	justify-content: space-around;
-	margin-left: 10%;
+	margin-left: 25rem;
+	box-sizing: border-box;
 }
 
-ul:hover {
+.nav-li-home,
+.nav-li-shop,
+.nav-li-cart {
+	transition: all 150ms;
+	box-sizing: border-box;
+	padding: 0.3rem;
+	border-bottom: 3px solid transparent;
+}
+
+.nav-li-home:hover,
+.nav-li-shop:hover,
+.nav-li-cart:hover {
 	cursor: pointer;
+	border-bottom: 3px solid #c6b45e;
 }
 
 a {
 	text-decoration: none;
-	color: rgb(255, 228, 72);
+	color: #c6b45e;
+	padding: 0 0.5rem;
 }
 
 .home {
@@ -56,32 +84,37 @@ a {
 	height: 100vh;
 	background-image: url("./watch.jpg");
 	background-repeat: no-repeat;
-	background-position: left top;
+	background-position: center;
 	z-index: -1;
 }
 
 .nav-home {
-	background-color: transparent;
+	background-color: rgba(0, 1, 5, 0.8);
+	z-index: 1;
 }
 
 .nav-shop {
-	background-color: black;
+	background-color: rgba(0, 1, 5, 0.8);
+	border-bottom: 3px solid #c6b45e;
 }
 
 .nav-cart {
-	background-color: black;
+	background-color: rgba(0, 1, 5, 0.8);
+	border-bottom: 3px solid #c6b45e;
 }
 
 .product-container {
-	width: 20vw;
+	width: 18vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 5%;
+	margin: 3rem 5rem;
 }
 
 .product-img {
-	width: 20vw;
+	width: 20rem;
+	border-radius: 10px;
+	border: 3px solid #c6b45e;
 }
 
 .counter-container {
@@ -89,9 +122,11 @@ a {
 }
 
 .counter-item {
-	padding: 10%;
-	margin: 1%;
-	outline: 1px solid gold;
+	padding: 0.2rem;
+	border: 3px solid #c6b45e;
+	display: flex;
+	align-items: center;
+	color: black;
 }
 
 .btn:hover {
@@ -99,8 +134,15 @@ a {
 }
 
 .input-num {
-	width: 2vw;
-	outline: 1px solid gold;
+	width: 2rem;
+	border: 3px solid #c6b45e;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+}
+
+.input-num:focus {
+	outline: none;
 }
 
 .shop {
@@ -112,4 +154,146 @@ a {
 .title {
 	display: flex;
 	justify-content: center;
+	font-size: 2.5rem;
+}
+
+.minus {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 1.5rem;
+}
+
+.add {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.add-to-cart,
+.delete-from-cart,
+.empty-cart-btn {
+	padding: 0.3rem 1rem;
+	margin-top: 0.5rem;
+	background-color: #c6b45e;
+	border: none;
+	color: white;
+	font-size: 1rem;
+}
+
+.add-to-cart:hover,
+.delete-from-cart:hover,
+.empty-cart-btn:hover {
+	cursor: pointer;
+	opacity: 80%;
+}
+
+.product-name {
+	margin: 0;
+	margin-top: 0.3rem;
+	font-size: 1.2rem;
+}
+
+.cart-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.cart-header {
+	font-size: 2.5rem;
+}
+
+.nav-li-cart {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.cart-number {
+	margin: 0;
+	margin-left: 0.5rem;
+}
+
+.cart-nav-container {
+	display: flex;
+	align-items: center;
+}
+
+.icon-container {
+	display: flex;
+	align-items: center;
+	border-bottom: 3px solid transparent;
+}
+
+.empty-cart-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media screen and (max-width: 1440px) {
+	.home {
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	ul {
+		margin-right: 0rem;
+	}
+}
+
+@media screen and (max-width: 975px) {
+	.product-img {
+		width: 15rem;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	ul {
+		position: relative;
+		right: 7rem;
+	}
+	.watch-tower-header {
+		position: relative;
+		left: 7rem;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	.home {
+		background-position: center;
+		background-size: cover;
+	}
+	ul {
+		right: 12rem;
+	}
+	.watch-tower-header {
+		left: 12rem;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	.add-to-cart,
+	.delete-from-cart {
+		width: 7rem;
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	ul {
+		right: 14rem;
+	}
+	.watch-tower-header {
+		left: 14rem;
+		font-size: 1rem;
+	}
+
+	ul > * {
+		margin: 0;
+		padding: 0;
+		font-size: 0.8rem;
+	}
 }

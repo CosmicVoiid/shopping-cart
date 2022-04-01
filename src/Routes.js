@@ -21,7 +21,7 @@ const Routes = () => {
 				0
 			);
 			setTotalItems(cartTotalItems);
-		}
+		} else setTotalItems(0);
 		console.log({ totalCartItems });
 	}, [totalCartItems]);
 
@@ -33,13 +33,23 @@ const Routes = () => {
 					exact
 					path="/shop"
 					render={(props) => (
-						<Shop {...props} parentCallback={totalCartCallback} />
+						<Shop
+							{...props}
+							parentCallback={totalCartCallback}
+							cart={totalCartItems}
+						/>
 					)}
 				/>
 				<Route
 					exact
 					path="/cart"
-					render={(props) => <Cart {...props} cart={totalCartItems} />}
+					render={(props) => (
+						<Cart
+							{...props}
+							parentCallback={totalCartCallback}
+							cart={totalCartItems}
+						/>
+					)}
 				/>
 				<Route path="" component={App} />
 			</Switch>
