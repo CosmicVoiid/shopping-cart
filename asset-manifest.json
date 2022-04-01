@@ -1,26 +1,19 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.b2ea47d7.chunk.css",
-    "main.js": "/shopping-cart/static/js/main.654c05af.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.654c05af.chunk.js.map",
-    "runtime-main.js": "/shopping-cart/static/js/runtime-main.47237396.js",
-    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.47237396.js.map",
-    "static/js/2.4d3936f3.chunk.js": "/shopping-cart/static/js/2.4d3936f3.chunk.js",
-    "static/js/2.4d3936f3.chunk.js.map": "/shopping-cart/static/js/2.4d3936f3.chunk.js.map",
+    "main.css": "/shopping-cart/static/css/main.70ac8c83.css",
+    "main.js": "/shopping-cart/static/js/main.1532936b.js",
+    "static/media/rolex.jpeg": "/shopping-cart/static/media/rolex.8f0b0735bdf9210a91d5.jpeg",
+    "static/media/patek.jpg": "/shopping-cart/static/media/patek.124043e9387acf4cf985.jpg",
+    "static/media/watch.jpg": "/shopping-cart/static/media/watch.dba51e4951b218a2a4c6.jpg",
+    "static/media/omega.jpeg": "/shopping-cart/static/media/omega.474df090fb786f18023b.jpeg",
+    "static/media/lige-watch.jpeg": "/shopping-cart/static/media/lige-watch.8ed7602052c79c61385b.jpeg",
+    "static/media/seiko.jpeg": "/shopping-cart/static/media/seiko.37c2af4661958d031fc4.jpeg",
     "index.html": "/shopping-cart/index.html",
-    "static/css/main.b2ea47d7.chunk.css.map": "/shopping-cart/static/css/main.b2ea47d7.chunk.css.map",
-    "static/js/2.4d3936f3.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.4d3936f3.chunk.js.LICENSE.txt",
-    "static/media/lige-watch.8ed76020.jpeg": "/shopping-cart/static/media/lige-watch.8ed76020.jpeg",
-    "static/media/omega.474df090.jpeg": "/shopping-cart/static/media/omega.474df090.jpeg",
-    "static/media/patek.5c1be471.jpeg": "/shopping-cart/static/media/patek.5c1be471.jpeg",
-    "static/media/rolex.8f0b0735.jpeg": "/shopping-cart/static/media/rolex.8f0b0735.jpeg",
-    "static/media/seiko.37c2af46.jpeg": "/shopping-cart/static/media/seiko.37c2af46.jpeg",
-    "static/media/App.css": "/shopping-cart/static/media/watch.dba51e49.jpg"
+    "main.70ac8c83.css.map": "/shopping-cart/static/css/main.70ac8c83.css.map",
+    "main.1532936b.js.map": "/shopping-cart/static/js/main.1532936b.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.47237396.js",
-    "static/js/2.4d3936f3.chunk.js",
-    "static/css/main.b2ea47d7.chunk.css",
-    "static/js/main.654c05af.chunk.js"
+    "static/css/main.70ac8c83.css",
+    "static/js/main.1532936b.js"
   ]
 }
