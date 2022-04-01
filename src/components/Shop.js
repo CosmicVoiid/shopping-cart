@@ -18,7 +18,7 @@ function Shop(props) {
 
 	useEffect(() => {
 		props.parentCallback(cartItems);
-		console.log(cartItems);
+		// console.log(cartItems);
 	}, [cartItems]);
 
 	useEffect(() => {
@@ -29,7 +29,7 @@ function Shop(props) {
 		const findObject = cartItems.findIndex(
 			(obj) => obj.description === childData.description
 		);
-		console.log(findObject);
+		// console.log(findObject);
 
 		if (findObject !== -1) {
 			const arrayCopy = [...cartItems];

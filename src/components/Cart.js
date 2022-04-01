@@ -8,7 +8,7 @@ function Cart(props) {
 
 	useEffect(() => {
 		setInCart(props.cart);
-		console.log(inCart);
+		// console.log(inCart);
 	}, [props]);
 
 	const handleDelete = async (childData) => {
@@ -17,7 +17,7 @@ function Cart(props) {
 			(info) => info.description !== childData.description
 		);
 		setInCart(arrayCopy);
-		console.log(arrayCopy);
+		// console.log(arrayCopy);
 		props.parentCallback(arrayCopy);
 	};
 

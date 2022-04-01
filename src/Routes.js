@@ -22,7 +22,7 @@ const Routes = () => {
 			);
 			setTotalItems(cartTotalItems);
 		} else setTotalItems(0);
-		console.log({ totalCartItems });
+		// console.log({ totalCartItems });
 	}, [totalCartItems]);
 
 	return (
